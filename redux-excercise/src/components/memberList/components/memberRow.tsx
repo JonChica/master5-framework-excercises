@@ -1,22 +1,26 @@
-import * as React from 'react';
-import {MemberEntity} from '../../../model/member';
+import * as React from "react";
+import { MemberEntity } from "../../../model/member";
 
-interface Props  {
-  member : MemberEntity;
+interface Props {
+  member: MemberEntity;
 }
 
 export const MemberRowComponent = (props: Props) => {
-   return (
-     <tr>
-       <td>
-         <img src={props.member.avatar_url} className="avatar" style={{maxWidth: '200px'}}/>
-       </td>
-       <td>
-         <span>{props.member.id}</span>
-       </td>
-       <td>
-         <span>{props.member.login}</span>
-       </td>
-     </tr>
-   );
-}
+  return (
+    <tr>
+      <td>
+        <img
+          src={props.member.avatar_url}
+          className="avatar"
+          style={{ maxWidth: "200px" }}
+        />
+      </td>
+      <td>
+        <span>{props.member.id}</span>
+      </td>
+      <td>
+        <span>{props.member.login}</span>
+      </td>
+    </tr>
+  );
+};
