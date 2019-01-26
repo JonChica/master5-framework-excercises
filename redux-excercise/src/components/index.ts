@@ -1,1 +1,1 @@
-export {MembersAreaContainer} from './memberList/memberAreaContainer';
+export { MembersAreaContainer } from "./memberList/memberAreaContainer";

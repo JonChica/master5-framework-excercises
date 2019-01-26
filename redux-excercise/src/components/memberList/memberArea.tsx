@@ -5,40 +5,27 @@ import { MemberEntity } from "../../model/member";
 interface Props {
   members: Array<MemberEntity>;
   loadMembers: (organizationName: string) => any;
-}
-
-interface State {
+  updateFilter: (filter: string) => any;
   organizationName: string;
 }
 
-export class MemberAreaComponent extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      organizationName: "lemoncode"
-    };
-  }
-
-  setOrganizationName = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    this.setState({ organizationName: event.target.value });
-  };
-
+export class MemberAreaComponent extends React.Component<Props> {
   public render() {
     return (
       <div>
-        <MemberTableComponent members={this.props.members} />
         <br />
         <input
           type="text"
-          name="organizationName"
-          onChange={this.setOrganizationName}
+          value={this.props.organizationName}
+          onChange={e => this.props.updateFilter(e.target.value)}
         />
         <input
           type="submit"
           value="load"
           className="btn btn-default"
-          onClick={() => this.props.loadMembers(this.state.organizationName)}
+          onClick={() => this.props.loadMembers(this.props.organizationName)}
         />
+        <MemberTableComponent members={this.props.members} />
       </div>
     );
   }
