@@ -1,5 +1,6 @@
 import * as React from "react";
 import { MemberEntity } from "../../../model/member";
+import { TableRow, TableCell, Avatar } from "@material-ui/core";
 
 interface Props {
   member: MemberEntity;
@@ -7,20 +8,19 @@ interface Props {
 
 export const MemberRowComponent = (props: Props) => {
   return (
-    <tr>
-      <td>
-        <img
+    <TableRow>
+      <TableCell>
+        <Avatar
           src={props.member.avatar_url}
-          className="avatar"
-          style={{ maxWidth: "200px" }}
+          style={{ width: 80, height: 80 }}
         />
-      </td>
-      <td>
+      </TableCell>
+      <TableCell>
         <span>{props.member.id}</span>
-      </td>
-      <td>
+      </TableCell>
+      <TableCell>
         <span>{props.member.login}</span>
-      </td>
-    </tr>
+      </TableCell>
+    </TableRow>
   );
 };
