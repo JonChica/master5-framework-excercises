@@ -10,11 +10,12 @@ import { MembersApiService } from '../members-api.service';
 })
 export class MembersTableComponent {
   members: MemberEntity[];
+  organizationName: 'lemoncode';
 
   constructor(private membersApi: MembersApiService) { }
 
   loadMembers() {
-    this.membersApi.getAllMembers('lemoncode')
+    this.membersApi.getAllMembers(this.organizationName)
       .subscribe((ms) => this.members = ms);
   }
 
