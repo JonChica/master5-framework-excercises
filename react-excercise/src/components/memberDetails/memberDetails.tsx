@@ -1,7 +1,7 @@
-import * as React from "react";
-import { MemberDetails, createDefaultMemberDetails } from "../../model/member";
-import { memberAPI } from "../../api/memberAPI";
-import { RouteComponentProps, Link } from "react-router-dom";
+import * as React from 'react';
+import { MemberDetails, createDefaultMemberDetails } from '../../model/member';
+import { memberAPI } from '../../api/memberAPI';
+import { RouteComponentProps, Link } from 'react-router-dom';
 import {
   Avatar,
   Card,
@@ -11,10 +11,10 @@ import {
   CardHeader,
   List,
   ListItem,
-  Grid
-} from "@material-ui/core";
+  Grid,
+} from '@material-ui/core';
 
-interface Props extends RouteComponentProps<any>, React.Props<any> {}
+interface Props extends RouteComponentProps<any> {}
 interface State {
   member: MemberDetails;
 }
@@ -23,7 +23,7 @@ export class MemberDetailsComponent extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      member: createDefaultMemberDetails()
+      member: createDefaultMemberDetails(),
     };
   }
 
@@ -35,7 +35,7 @@ export class MemberDetailsComponent extends React.Component<Props, State> {
 
   public render() {
     return (
-      <Grid container justify="center">
+      <Grid container justify='center'>
         <Card>
           <CardHeader
             avatar={
@@ -56,8 +56,8 @@ export class MemberDetailsComponent extends React.Component<Props, State> {
             </List>
           </CardContent>
           <CardActions>
-            <Link to="/home">
-              <Button size="small" color="secondary">
+            <Link to='/home'>
+              <Button size='small' color='secondary'>
                 New Search
               </Button>
             </Link>
