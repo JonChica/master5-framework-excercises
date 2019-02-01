@@ -28,7 +28,7 @@ export default Vue.extend({
   components: { MemberHead, MemberRow },
   data: () => ({
     members: [] as Member[],
-    organizationName: 'lemoncode'
+    organizationName: "lemoncode"
   }),
   methods: {
     loadMembers: function() {
@@ -40,7 +40,7 @@ export default Vue.extend({
 });
 </script>
 
-+ <style module>
+<style module>
 .table {
   border-collapse: collapse;
   width: 100%;
